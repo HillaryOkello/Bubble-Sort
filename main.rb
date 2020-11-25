@@ -5,11 +5,10 @@
 # comparison of first and second elements
 # If the element on the left is greater than the one on the right swap the two
 
-
 def bubble_sort(array)
   array_length = array.size
   return array if array_length <= 1
-  
+
   loop do
     swap = false
     (array_length - 1).times do |i|
@@ -40,6 +39,6 @@ def bubble_sort_by(array)
   end
   print array
 end
-bubble_sort_by(%w(hi hello hey)) do |left,right|
+bubble_sort_by(%w[hi hello hey]) do |left, right|
   left.length - right.length
 end

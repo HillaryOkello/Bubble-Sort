@@ -9,8 +9,7 @@
 def bubble_sort(array)
   array_length = array.size
   return array if array_length <= 1
-  i = 0
-  swap = true
+  
   loop do 
     swap = false
     (array_length - 1).times do |i|
@@ -25,3 +24,22 @@ def bubble_sort(array)
 end
 
 puts bubble_sort([5, 8, 3, 2, 1]);
+
+def bubble_sort_by array
+  unsort = true
+  while unsort do
+    i = 0
+    unsort = false
+    while i < (array.length - 1)
+      if (yield array[i], array[i + 1]).to_i >= 0
+        array[i], array[i + 1] = array[i + 1], array[i]
+        unsort = true
+      end
+      i += 1
+    end
+  end
+  print array
+end
+bubble_sort_by(["hi","hello","hey"]) do |left,right|
+  left.length - right.length
+end

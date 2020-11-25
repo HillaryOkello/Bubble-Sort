@@ -1,33 +1,33 @@
-#define a method which takes in an array as its parameter
-#looping through the array
-#set the value of swap to false
-#if the lenght of array is 1 or less than 1 we shouldn't swap
-#comparison of first and second elements 
-#If the element on the left is greater than the one on the right swap the two
+# define a method which takes in an array as its parameter
+# looping through the array
+# set the value of swap to false
+# if the lenght of array is 1 or less than 1 we shouldn't swap
+# comparison of first and second elements
+# If the element on the left is greater than the one on the right swap the two
 
 
 def bubble_sort(array)
   array_length = array.size
   return array if array_length <= 1
   
-  loop do 
+  loop do
     swap = false
     (array_length - 1).times do |i|
-      if array[i] > array[i+1]
-        array[i], array[i+1] = array[i+1], array[i]
+      if array[i] > array[i + 1]
+        array[i], array[i + 1] = array[i + 1], array[i]
         swap = true
       end
     end
-    break if not swap
+    break unless swap
   end
   array
 end
 
-puts bubble_sort([5, 8, 3, 2, 1]);
+puts bubble_sort([5, 8, 3, 2, 1])
 
-def bubble_sort_by array
+def bubble_sort_by(array)
   unsort = true
-  while unsort do
+  while unsort
     i = 0
     unsort = false
     while i < (array.length - 1)
@@ -40,6 +40,6 @@ def bubble_sort_by array
   end
   print array
 end
-bubble_sort_by(["hi","hello","hey"]) do |left,right|
+bubble_sort_by(%w(hi hello hey)) do |left,right|
   left.length - right.length
 end

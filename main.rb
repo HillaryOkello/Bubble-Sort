@@ -37,8 +37,9 @@ def bubble_sort_by(array)
       i += 1
     end
   end
-  print array
+  return array
 end
+
 bubble_sort_by(%w[hi hello hey]) do |left, right|
   left.length - right.length
 end
